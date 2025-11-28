@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linep-validator"
+version = "0.1.0"
+description = "Validator for pressure-profile LineP xarray datasets."
+authors = [{ name = "Nic Annau" }]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "tabulate",
+    "click>=8.1",
+    "pyyaml>=6.0",
+    "xarray>=2023.1",
+    "netcdf4",
+]
+
+[project.scripts]
+validate-linep = "linep_validator.cli:main"
+
+[tool.setuptools.packages.find]
+where = [""]  # look in root for packages
+
+[tool.setuptools.package-data]
+linep_validator = ["config_CTD.yaml", "config_BGC.yaml"]
+
+[tool.setuptools]
+# include-package-data must be a boolean at this level, not inside package-data
+include-package-data = true

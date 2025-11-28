@@ -1,0 +1,24 @@
+correct_dimensions:
+  time: 623
+  station: 24
+  PRESSURE_BIN_CNTR: 4000
+
+required_vars:
+  - TEMPERATURE
+  - SALINITY
+
+alternative_groups:
+  - ["OXYGEN_UMOL_KG", "OXYGEN_MMOL_M3"]
+
+required_coords:
+  lat: station
+  lon: station
+
+expected_units:
+  SALINITY: ["psu"]
+  salinity: ["psu"]
+
+  lat: ["degrees", "degree_north", "deg"]
+  lon: ["degrees", "degree_east", "deg"]
+
+  PRESSURE_BIN_CNTR: ["dbar"]
