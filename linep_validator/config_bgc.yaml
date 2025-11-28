@@ -1,0 +1,31 @@
+# Expected dimensions and their sizes
+correct_dimensions:
+  time: 372         # matches the dataset's time length
+  station: 5        # matches the dataset's station length
+  PRESSURE: 23      # matches the dataset's PRESSURE dimension length
+
+# Required variables
+required_vars: 
+  - TEMPERATURE
+  - SALINITY
+  - DIC
+  - OXYGEN
+  - TA
+
+# Required coordinates and which dimension they correspond to
+required_coords:
+  lat: station
+  lon: station
+
+expected_units:
+  # Variables
+  TEMPERATURE: ["degC", "degree_Celsius", "degrees_Celsius", "celsius"]
+  SALINITY: ["psu"]
+  DIC: ["umol/kg", "µmol/kg"]
+  OXYGEN: ["umol/kg", "µmol/kg"]
+  TA: ["umol/kg", "µmol/kg"]
+  # Coordinates
+  lat: ["degrees", "degree_north", "deg"]
+  lon: ["degrees", "degree_east", "deg"]
+
+  PRESSURE: ["dbar"]

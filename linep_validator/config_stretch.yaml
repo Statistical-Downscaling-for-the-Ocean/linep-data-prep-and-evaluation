@@ -1,0 +1,29 @@
+# config_stretch.yaml for LineP / "Stretch" dataset
+
+# Expected dimensions and their sizes
+correct_dimensions:
+  time: 623           # matches the dataset's time length
+  station: 93         # matches the dataset's station length
+  PRESSURE_BIN_CNTR: 1000  # matches the dataset's PRESSURE_BIN_CNTR length
+
+# Required variables
+required_vars: 
+  - TEMPERATURE
+  - SALINITY
+
+# Required coordinates and which dimension they correspond to
+required_coords:
+  lat: station
+  lon: station
+
+# Expected units (case-insensitive)
+expected_units:
+  # Variables
+  TEMPERATURE: ["degC", "degree_Celsius", "degrees_Celsius", "celsius"]
+  SALINITY: ["psu"]
+
+  # Coordinates
+  lat: ["degrees", "degree_north", "deg"]
+  lon: ["degrees", "degree_east", "deg"]
+
+  PRESSURE_BIN_CNTR: ["dbar"]
