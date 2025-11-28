@@ -11,11 +11,12 @@ We provide a CLI tool for validating LineP pressure-profile datasets (netcdf fil
 Supports multiple dataset types (`CTD`, `BGC`, `STRETCH`) with built-in YAML configs.
 
 ### Installation
-We strongly recommend using a fresh virtual environment for this tool.
+We strongly recommend using [astral uv](https://docs.astral.sh/uv/getting-started/installation/) and a fresh virtual environment for this tool.
 
 ```bash
 # recommended installing with uv
-uv install git+https://github.com/Statistical-Downscaling-for-the-Ocean/linep-data-prep-and-evaluation.git
+uv venv --python=3.12 && source .venv/bin/activate
+uv pip install git+https://github.com/Statistical-Downscaling-for-the-Ocean/linep-data-prep-and-evaluation.git
 ```
 
 Or using bare pip
@@ -28,6 +29,24 @@ pip install .
 This will install the script which can be accessed with `validate-linep`
 
 ### Basic usage
+
+to see the help message
+```bash
+$ validate-linep --help
+Usage: validate-linep [OPTIONS] COMMAND [ARGS]...
+
+  LineP dataset validator CLI.
+
+Options:
+  --dataset-type [ctd|bgc|stretch]
+                                  Specify which dataset type to validate
+                                  (default: ctd).
+  --help                          Show this message and exit.
+
+Commands:
+  schema    Show the expected schema for the LineP dataset.
+  validate  Validate a dataset against the built-in schema.
+```
 
 to check the expected schema run
 
