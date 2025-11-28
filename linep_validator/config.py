@@ -1,10 +1,20 @@
+# config.py
 import yaml
-import importlib.resources
+from importlib import resources
 
 
-def load_config(filename="config_CTD.yaml"):
+def load_config(cfg_file="CTD"):
     """
-    Load the packaged config.yaml from the linep_validator package.
+    Load the correct YAML config from the package.
     """
-    with importlib.resources.open_text("linep_validator", filename) as f:
-        return yaml.safe_load(f)
+
+    try:
+        with resources.open_text("linep_validator", cfg_file) as f:
+            cfg = yaml.safe_load(f)
+    except FileNotFoundError as e:
+        raise FileNotFoundError(
+            f"Could not find config file '{cfg_file}' inside the package. "
+            f"Make sure your package is installed correctly."
+        ) from e
+
+    return cfg

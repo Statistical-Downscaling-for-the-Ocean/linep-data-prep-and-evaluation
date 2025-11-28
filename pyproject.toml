@@ -22,11 +22,11 @@ dependencies = [
 validate-linep = "linep_validator.cli:main"
 
 [tool.setuptools.packages.find]
-where = [""]  # look in root for packages
+where = [""]
 
 [tool.setuptools.package-data]
-linep_validator = ["config_CTD.yaml", "config_BGC.yaml"]
+linep_validator = ["config_*.yaml"]
+
 
 [tool.setuptools]
-# include-package-data must be a boolean at this level, not inside package-data
 include-package-data = true
